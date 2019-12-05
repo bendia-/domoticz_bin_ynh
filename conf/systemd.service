@@ -1,0 +1,14 @@
+[Unit]
+Description=Domoticz (Home automation system)
+After=network.target
+After=syslog.target
+
+[Service]
+Type=simple
+User=__APP__
+Group=__APP__
+WorkingDirectory=__FINALPATH__/
+ExecStart=__FINALPATH__/domoticz -www __PORT__ -noupdates -sslwww 0
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,7 @@
+SOURCE_URL=https://releases.domoticz.com/releases/release/domoticz_linux_armv7l.tgz
+SOURCE_SUM=9928706eb49cd3581f0001bd0aad24fb68d91e4127d6ec9769501a66408d573e
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=tar.gz
+SOURCE_IN_SUBDIR=false
+SOURCE_FILENAME=domoticz_linux_armv7l.tgz
+

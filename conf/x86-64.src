@@ -1,0 +1,7 @@
+SOURCE_URL=https://releases.domoticz.com/releases/release/domoticz_linux_x86_64.tgz
+SOURCE_SUM=fad21987a2951273192ec81e494fa6c501c4b12da20eea7da51e55dd84d6c967
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=tar.gz
+SOURCE_IN_SUBDIR=false
+SOURCE_FILENAME=domoticz_linux_x86_64.tgz
+
