@@ -97,17 +97,21 @@ ynh_app_setting_set $app port $port
 ###		- And the section "UPGRADE DEPENDENCIES" in the upgrade script
 
 #ynh_install_app_dependencies libboost-dev cmake make gcc g++ libssl-dev git libcurl4-gnutls-dev libusb-dev python3-dev zlib1g-dev libboost-thread-dev libboost-system-dev libboost-atomic-dev libboost-regex-dev 
-ynh_script_progression --message="Add Debian-security  Jessie sources for libssl1.0.0 installation" --time --weight=1
+ynh_script_progression --message="Install libssl1.0.0 for $architecture architeture" --time --weight=1
 #Add Jessie security mirror to have last libssl1.0.0 release
 if [ "$architecture" = "arm" ]; then
-	source_line="deb http://raspbian.raspberrypi.org/raspbian/ jessie main contrib non-free rpi"
+	deb_source="http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u12_armhf.deb"
+elif [ "$architecture" = "x86-64" ]; then
+	deb_source="http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u12_amd64.deb"
+elif [ "$architecture" = "arm64" ]; then
+        deb_source="http://ftp.ports.debian.org/debian-ports//pool-arm64/main/o/openssl/libssl1.0.0_1.0.1j-1_arm64.deb"
 else
-	source_line="deb http://deb.debian.org/debian-security/ jessie/updates main" 
+        ynh_die "Could not find libssl for your architecture"	
 fi
-test ! -f "$source_list" && echo "$source_line" >> "$source_list"
-ynh_script_progression --message="Install libssl1.0.0" --time --weight=18
-ynh_package_update
-ynh_install_app_dependencies libssl1.0.0
+
+wget -O "libssl1.0.0.deb" "$deb_source"
+dpkg -i "libssl1.0.0.deb"
+
 
 #=================================================
 # CREATE A MYSQL DATABASE

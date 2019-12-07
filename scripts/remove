@@ -46,8 +46,8 @@ fi
 #=================================================
 ynh_script_progression --message="Remove dependancies" --time --weight=7
 # Remove metapackage and its dependencies
-ynh_remove_app_dependencies
-
+#ynh_remove_app_dependencies
+ynh_package_remove libssl1.0.0
 #=================================================
 # REMOVE THE MYSQL DATABASE
 #=================================================
