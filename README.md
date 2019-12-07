@@ -1,18 +1,10 @@
 # Domoticz pour YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/domoticz.svg)](https://dash.yunohost.org/appci/app/domoticz)  
-[![Install Domoticz with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=domoticz)
-
 > Ce paquet permet d'installer [Domoticz](https://domoticz.com) rapidement et facilement sur un serveur YunoHost directement depuis le binaire pré-compilé.
 Si vous n'avez pas YunoHost, [voir ici](https://yunohost.org/#/install) comment installer et en profiter.
 
 > *This package allow you to install [Domoticz](https://domoticz.com) quickly and simply on a YunoHost server.
 If you don't have YunoHost, please see [here](https://yunohost.org/#/install) to know how to install and enjoy it.*
-
-:warning: L'installation prend entre 20 min et 1h30 suivant votre connexion et machine (téléchargement des sources Domoticz (36Mo) puis compilation), installation depuis la ligne de commande recommandée.
-Raspberry 3B+ : ~1h (SWAP >= 500 Mo)
-
-:warning: *Installation duration could be between 20min to 1h30 depending on your connection speed and CPU (download of Domoticz sources and compilation). Install from command line is recommanded.*
 
 ## Aperçu
 
@@ -28,8 +20,8 @@ De nombreux protocoles (RFLink, Zwave, MQTT, ...) et matériels sont [compatible
 - to create screnarii
 *A lot of protocols (RFLink, Zwave, MQTT, ...) and hardware are [compatibles](https://www.domoticz.com/wiki/Hardware).*
 
-**Version packagée :** Domoticz 4.9700 (version stable au 12/01/2019)
-**Shipped version:** Domoticz 4.9700
+**Version packagée :** Domoticz 4.10717 (version stable au 21/05/2019)
+**Shipped version:** Domoticz 4.10717
 
 ## Captures d'écran
 
@@ -57,10 +49,10 @@ Pas de gestion utilisateur et encore moins multi-utilisateur depuis Yunohost.
 
 #### Architectures supportées
 
-Testé sur x86-64
-*Tested on x86-64*
 
-* x86-64b - [![Build Status](https://ci-apps.yunohost.org/jenkins/job/domoticz%20%28Community%29/badge/icon)](https://ci-apps.yunohost.org/ci/apps/domoticz/)
+Le projet amont ne fourni pas de binaire pour i386. Testé sur x86-64 et armhf.
+*Upstream don't provide i386 binnary. Tested on x86-64 and armhf*
+
 
 ## Limitations
 

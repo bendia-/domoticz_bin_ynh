@@ -29,7 +29,6 @@ app=$YNH_APP_INSTANCE_NAME
 domain=$(ynh_app_setting_get $app domain)
 path_url=$(ynh_app_setting_get $app path)
 final_path=$(ynh_app_setting_get $app final_path)
-db_name=$(ynh_app_setting_get $app db_name)
 
 #=================================================
 # CHECK IF THE APP CAN BE RESTORED
@@ -90,13 +89,13 @@ chown -R root: $final_path
 #=================================================
 
 # Define and install dependencies
-ynh_install_app_dependencies deb1 deb2
+ynh_install_app_dependencies libbs1.0.0
 
 #=================================================
 # ADVERTISE SERVICE IN ADMIN PANEL
 #=================================================
 
-yunohost service add $app --log "/var/log/$app/APP.log"
+yunohost service add $app --log "/var/log/$app/$app.log"
 
 #=================================================
 # RESTORE SYSTEMD
@@ -124,4 +123,5 @@ ynh_restore_file "/etc/logrotate.d/$app"
 #=================================================
 
 #systemctl reload php5-fpm
+systemctl start $app.service
 systemctl reload nginx
