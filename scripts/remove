@@ -115,8 +115,6 @@ ynh_secure_remove "/var/log/$app/"
 #=================================================
 # GENERIC FINALIZATION
 #=================================================
-ynh_script_progression --message="Update packages" --time --weight=2
-ynh_package_update
 
 #=================================================
 # REMOVE DEDICATED USER
